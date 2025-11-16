@@ -1,0 +1,31 @@
+2025-11-16 12:34:27, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-16 12:34:28, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:44
+2025-11-16 12:39:02, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:55
+2025-11-16 12:39:04, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-16 12:40:30, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:57
+2025-11-16 12:41:09, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:57
+2025-11-16 12:45:25, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:58
+2025-11-16 12:45:47, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:58
+2025-11-16 12:45:48, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-16 12:53:43, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-16 13:17:02, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:59
+2025-11-16 13:17:07, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-16 13:17:08, EXEC, v:1, k:poo@budega, mode:FULL, rate:0
+2025-11-16 13:17:18, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:59
+2025-11-16 13:18:59, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:60
+2025-11-16 13:19:50, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:60
+2025-11-16 13:20:01, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:60
+2025-11-16 13:21:15, EXEC, v:1, k:poo@budega, mode:FULL, rate:30, size:60
+2025-11-16 13:22:48, EXEC, v:1, k:poo@budega, mode:FULL, rate:40, size:63
+2025-11-16 13:23:47, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:66
+2025-11-16 13:24:35, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:68
+2025-11-16 13:25:17, EXEC, v:1, k:poo@budega, mode:FULL, rate:70, size:68
+2025-11-16 13:25:35, EXEC, v:1, k:poo@budega, mode:FULL, rate:90, size:68
+2025-11-16 13:26:13, EXEC, v:1, k:poo@budega, mode:FULL, rate:90, size:68
+2025-11-16 13:26:30, EXEC, v:1, k:poo@budega, mode:FULL, rate:100, size:68
+2025-11-16 13:26:36, EXEC, v:1, k:poo@budega, mode:FULL, rate:100
+2025-11-16 13:26:38, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-16 13:27:31, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-16 13:27:32, EXEC, v:1, k:poo@budega, mode:FULL, rate:100
+2025-11-16 13:27:34, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-16 13:28:49, MOVE, v:1, k:poo@pula-pula, mode:DOWN

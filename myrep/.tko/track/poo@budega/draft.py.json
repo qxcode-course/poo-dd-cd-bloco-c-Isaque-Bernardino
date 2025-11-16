@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-11_19-44-38",
+            "content": "@@ -329,194 +329,4 @@\n = %5B%5D\n-%0A    def __str__(self):%0A        caixas = %22, %22.join(%5Bstr(x) for x in self.caixas%5D)%0A        espera = %22, %22.join(%5Bstr(x) for x in self.espera%5D)%0A        return f%22Caixas:%7Bcaixas%7D%5CnEspera:%7Bespera%7D%22\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-11_19-48-29",
+            "content": "@@ -493,18 +493,16 @@\n xas:\n- %5B\n %7Bcaixas%7D\n %5D%5CnE\n@@ -497,17 +497,16 @@\n %7Bcaixas%7D\n-%5D\n %5CnEspera\n@@ -510,16 +510,14 @@\n era:\n- %5B\n %7Bespera%7D\n %5D%22\n@@ -514,10 +514,9 @@\n %7Bespera%7D\n-%5D\n %22\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-11-11_19-52-13",
+            "content": "@@ -381,34 +381,8 @@\n in(%5B\n-%22-----%22 if x is None else \n str(\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-11-11_19-54-13",
+            "content": "class Pessoa:\n    def __init__(self, nome: str):\n        self.nome = nome\n    def __str__(self):\n        return self.nome\nclass Budega:\n    def __init__(self, numCaixas: int):\n        self.caixas: list[Pessoa | None] = []\n        for x in range(numCaixas):\n            self.caixas.append(None)\n        self.espera: list[Pessoa] = []\n    def __str__(self):\n        caixas = \", \".join([\"-----\" if x is None else str(x) for x in self.caixas])\n        espera = \", \".join([str(x) for x in self.espera])\n        return f\"Caixas: [{caixas}]\\nEspera: [{espera}]\"",
+            "lines": "15"
+        }
+    ]
+}

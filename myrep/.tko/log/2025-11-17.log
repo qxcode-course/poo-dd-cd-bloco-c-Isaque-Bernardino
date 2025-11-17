@@ -92,3 +92,5 @@
 2025-11-17 23:16:05, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:42, size:104
 2025-11-17 23:19:14, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:57, size:104
 2025-11-17 23:19:27, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-17 23:19:46, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-17 23:19:47, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:57

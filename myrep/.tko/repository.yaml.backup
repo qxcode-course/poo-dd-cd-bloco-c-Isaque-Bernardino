@@ -21,6 +21,7 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@budega: '{rate:100}'
+  poo@lapiseira: '{rate:57}'
   poo@pula-pula: '{rate:100}'
 flags:
   quests: 0

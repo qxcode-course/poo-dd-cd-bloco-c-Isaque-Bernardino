@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-dd-cd-bloco-c-Isaque-Bernardino/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-16 12:34:22'
+  cache_timestamp: '2025-11-17 21:44:00'
   filters:
   - listas
 expanded:
@@ -21,6 +21,7 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@budega: '{rate:100}'
+  poo@pula-pula: '{rate:100}'
 flags:
   quests: 0
   tracks: 0
@@ -28,4 +29,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@pula-pula
+selected: poo@lapiseira

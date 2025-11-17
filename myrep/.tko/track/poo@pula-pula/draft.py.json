@@ -1,0 +1,164 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_13-36-15",
+            "content": "@@ -242,50 +242,7 @@\n self\n-):%0A        self.playing: list%5BKid %7C None%5D = %5B%5D\n+, )\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-16_13-38-49",
+            "content": "@@ -203,579 +203,89 @@\n age%0A\n-    def setName(self, name: str):%0A        self.__name = name%0A    def setAge(self, age: int):%0A        self.__age = age%0A    def __str__(self) -%3E str:%0A        return f%22%7Bself.__name%7D:%7Bself.__age%7D%22%0Aclass Trampoline:%0A    def __init__(self):%0A        self.playing: list%5BKid %7C None%5D = %5B%5D%0A        self.waiting: list%5BKid%5D = %5B%5D%0A    def __str__(self) -%3E str:%0A        playing = %22, %22.join(%5Bstr(x) for x in self.playing%5D)%0A        waiting = %22, %22.join(%5Bstr(x) for x in self.waiting%5D)%0A        return f%22%5B%7Bwaiting%7D%5D =%3E %5B%7Bplaying%7D%5D%22%0A    def arrive(self, kid: Kid):%0A        self.waiting.append(kid)\n+class Trampoline:%0A    def __init__(self):%0A        self.playing: list%5BKid %7C None%5D = %5B%5D\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-16_13-55-13",
+            "content": "@@ -778,111 +778,4 @@\n kid)\n-%0A    def enter(self, index: int):%0A        self.playing%5Bindex%5D = self.waiting%5B0%5D%0A        del self.waiting%5B0%5D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-16_13-57-07",
+            "content": "@@ -885,271 +885,4 @@\n g%5B0%5D\n-%0Adef main():%0A    pulapula = Trampoline()%0A    while True:%0A        line: str = input()%0A        print(%22$%22 + line)%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            print(pulapula)%0Amain()%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-11-16_13-59-18",
+            "content": "@@ -519,180 +519,8 @@\n  %5B%5D%0A\n-    def arrive(self, kid: Kid):%0A        self.waiting.append(kid)%0A    def enter(self, index: int):%0A        self.playing%5Bindex%5D = self.waiting%5B0%5D%0A        del self.waiting%5B0%5D%0A\n     \n@@ -710,16 +710,188 @@\n ying%7D%5D%22%0A\n+    def arrive(self, kid: Kid):%0A        self.waiting.append(kid)%0A    def enter(self, index: int):%0A        self.playing%5Bindex%5D = self.waiting%5B0%5D%0A        del self.waiting%5B0%5D%0A\n def main\n@@ -1141,16 +1141,15 @@\n lapula)%0A\n-%0A\n main()%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-16_14-00-11",
+            "content": "@@ -1144,72 +1144,8 @@\n ula)\n-%0A        elif args%5B0%5D == %22arrive%22:%0A            pulapula.arrive()\n %0A%0Ama\n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-11-16_14-03-06",
+            "content": "@@ -1207,24 +1207,8 @@\n ive(\n-args%5B1%5D, args%5B2%5D\n )%0A%0Am\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-16_14-03-52",
+            "content": "@@ -1207,35 +1207,25 @@\n ive(\n-str(\n args%5B1%5D\n-)\n , \n-(int(\n args%5B2%5D)\n ))%0A%0A\n@@ -1220,18 +1220,16 @@\n args%5B2%5D)\n-))\n %0A%0Amain()\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-16_14-04-28",
+            "content": "@@ -1215,17 +1215,16 @@\n args%5B1%5D)\n-)\n , (int(a\n@@ -1231,16 +1231,17 @@\n rgs%5B2%5D))\n+)\n %0A%0Amain()\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-16_14-04-54",
+            "content": "@@ -1191,59 +1191,51 @@\n     \n-kid = (args%5B1%5D)%0A            pulapula.arrive(Kid(kid\n+pulapula.arrive(str(args%5B1%5D)), (int(args%5B2%5D\n ))%0A%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-16_14-07-21",
+            "content": "@@ -1207,36 +1207,8 @@\n 1%5D)%0A\n-            age = (args%5B2%5D)%0A\n     \n@@ -1238,21 +1238,16 @@\n (Kid(kid\n-, age\n ))%0A%0Amain\n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-16_14-07-48",
+            "content": "@@ -1187,20 +1187,19 @@\n         \n-name\n+kid\n  = (args\n@@ -1263,20 +1263,19 @@\n ive(Kid(\n-name\n+kid\n , age))%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_14-08-17",
+            "content": "@@ -660,10 +660,9 @@\n ing%5B\n--1\n+0\n %5D%0A  \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_14-11-22",
+            "content": "@@ -652,25 +652,26 @@\n elf.waiting%5B\n-0\n+-1\n %5D%0A        de\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_14-11-59",
+            "content": "@@ -579,11 +579,8 @@\n end(\n-0, \n kid)\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_14-25-01",
+            "content": "@@ -575,16 +575,19 @@\n .append(\n+0, \n kid)%0A   \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_14-26-00",
+            "content": "@@ -1198,12 +1198,8 @@\n e = \n-(str\n (arg\n@@ -1203,17 +1203,16 @@\n args%5B1%5D)\n-)\n %0A       \n@@ -1226,12 +1226,8 @@\n e = \n-(int\n (arg\n@@ -1231,17 +1231,16 @@\n args%5B2%5D)\n-)\n %0A       \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_14-28-02",
+            "content": "@@ -1286,15 +1286,16 @@\n , age))%0A\n+%0A\n main()%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_15-42-49",
+            "content": "@@ -826,17 +826,8 @@\n  in \n-reversed(\n self\n@@ -834,17 +834,16 @@\n .waiting\n-)\n %5D)%0A     \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-17_19-00-43",
+            "content": "@@ -1300,106 +1300,8 @@\n e))%0A\n-        elif args%5B0%5D == %22enter%22:%0A            fila = int(args%5B1%5D)%0A            pulapula.enter(fila)%0A\n main\n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-17_19-05-48",
+            "content": "@@ -1352,17 +1352,18 @@\n a = \n-kid\n+int\n (args%5B\n+1\n %5D)%0A \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-17_19-16-49",
+            "content": "@@ -1329,16 +1329,47 @@\n enter%22:%0A\n+            fila = kid(args%5B%5D)%0A\n         \n@@ -1387,16 +1387,20 @@\n a.enter(\n+fila\n )%0Amain()\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-17_19-17-25",
+            "content": "@@ -602,43 +602,22 @@\n self\n-):%0A        kid = self.waiting.pop()\n+, index: int):\n %0A   \n@@ -637,39 +637,61 @@\n ying\n-.insert(0, kid)%0A        del kid\n+%5Bindex%5D = self.waiting%5B0%5D%0A        del self.waiting%5B0%5D\n %0A   \n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-17_19-20-53",
+            "content": "@@ -564,34 +564,31 @@\n elf.waiting.\n-insert(0, \n+append(\n kid)%0A    def\n@@ -821,16 +821,24 @@\n or x in \n+reversed\n (self.wa\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-17_19-21-39",
+            "content": "@@ -693,63 +693,8 @@\n kid%0A\n-    def leave(self):%0A        if len(self.playing) == 0%0A\n     \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-17_19-30-01",
+            "content": "@@ -747,113 +747,8 @@\n == 0\n-:%0A            return%0A        kid = self.playing.pop()%0A        self.waiting.insert(0, kid)%0A        del kid\n %0A   \n@@ -1411,70 +1411,8 @@\n r()%0A\n-        elif args%5B0%5D == %22leave%22:%0A            pulapula.leave()%0A\n main\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-17_19-31-58",
+            "content": "@@ -853,402 +853,8 @@\n kid%0A\n-    def remove(self, name: str):%0A        for index, kid in enumerate(self.waiting):%0A            if crian%C3%A7a.getName() == name:%0A                self.playing.pop(index)%0A                return%0A        for index, kid in enumerate(self.playing):%0A            if kid getName() == name:%0A                self.playing.pop(index)%0A                return%0A        print(f%22fail: %7Bname%7D nao esta no pula-pula%22)%0A\n     \n",
+            "lines": "53"
+        },
+        {
+            "label": "2025-11-17_19-44-43",
+            "content": "@@ -1972,109 +1972,8 @@\n e()%0A\n-        elif args%5B0%5D == %22remove%22:%0A            remover = args%5B1%5D%0A            pulapula.remove(remover)%0A\n main\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-17_19-46-08",
+            "content": "@@ -1107,17 +1107,17 @@\n   if kid\n-.\n+ \n getName(\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-17_19-47-21",
+            "content": "@@ -940,35 +940,39 @@\n %0A            if \n-kid\n+crian%C3%A7a\n .getName() == na\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-17_19-51-32",
+            "content": "@@ -988,28 +988,28 @@\n        self.\n-wait\n+play\n ing.pop(inde\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-17_19-52-28",
+            "content": "class Kid:\n    def __init__(self, name: str, age: int):\n        self.__name = name\n        self.__age = age\n    def getName(self):\n        return self.__name\n    def getAge(self):\n        return self.__age\n    def setName(self, name: str):\n        self.__name = name\n    def setAge(self, age: int):\n        self.__age = age\n    def __str__(self) -> str:\n        return f\"{self.__name}:{self.__age}\"\nclass Trampoline:\n    def __init__(self):\n        self.playing: list[Kid | None] = []\n        self.waiting: list[Kid] = []\n    def arrive(self, kid: Kid):\n        self.waiting.insert(0, kid)\n    def enter(self):\n        kid = self.waiting.pop()\n        self.playing.insert(0, kid)\n        del kid\n    def leave(self):\n        if len(self.playing) == 0:\n            return\n        kid = self.playing.pop()\n        self.waiting.insert(0, kid)\n        del kid\n    def remove(self, name: str):\n        for index, kid in enumerate(self.waiting):\n            if kid.getName() == name:\n                self.waiting.pop(index)\n                return\n        for index, kid in enumerate(self.playing):\n            if kid.getName() == name:\n                self.playing.pop(index)\n                return\n        print(f\"fail: {name} nao esta no pula-pula\")\n    def __str__(self) -> str:\n        playing = \", \".join([str(x) for x in self.playing])\n        waiting = \", \".join([str(x) for x in (self.waiting)])\n        return f\"[{waiting}] => [{playing}]\"\ndef main():\n    pulapula = Trampoline()\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(pulapula)\n        elif args[0] == \"arrive\":\n            name = (str(args[1]))\n            age = (int(args[2]))\n            pulapula.arrive(Kid(name, age))\n        elif args[0] == \"enter\":\n            pulapula.enter()\n        elif args[0] == \"leave\":\n            pulapula.leave()\n        elif args[0] == \"remove\":\n            remover = args[1]\n            pulapula.remove(remover)\nmain()\n",
+            "lines": "66"
+        }
+    ]
+}

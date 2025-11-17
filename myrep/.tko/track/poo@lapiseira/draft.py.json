@@ -7,8 +7,168 @@
         },
         {
             "label": "2025-11-17_21-44-15",
-            "content": "class Lead:\n    def __init__(self, thickness: float, hardness: str, size: int):\n        self.__thickness = thickness\n        self.__hardness = hardness\n        self.__size = size\n    def getThickness(self):\n        return self.__thickness\n    def getHardness(self):\n        return self.__hardness\n    def getSize(self):\n        return self.__size\n    def setSize(self, size: int):\n        self.__size = size\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        if self.__hardness == \"2B\":\n            return 2\n        if self.__hardness == \"4B\":\n            return 4\n        if self.__hardness == \"6B\":\n            return 6\n    def __str__(self) -> str:\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\nclass Pencil:\n    def __init__(self, thickness: float, tip: Lead | None):\n        self.__thickness = thickness\n        self.__tip = None\n        self.__bico = []\n        self.__tambor = []\n    def init(self, thickness: float):\n        self.__thickness = thickness\n    def hasGrafite(self) -> bool:\n        if self.__tip == None:\n            return False\n        else:\n            return True\n    def insert(self, thickness: float, hardness: str, size: int) -> bool:\n        if self.__thickness != thickness:\n            print(\"fail: calibre incompativel\")\n            return False\n        if self.hasGrafite():\n            print(\"fail: ja existe grafite\")\n            return False\n        self.__tip = Lead(thickness, hardness, size)\n        return True\n    def remove(self) -> Lead | None:\n        if self.__tip == None:\n            print(\"fail: nao existe grafite\")\n            return None\n        lead = self.__tip\n        self.__tip = None\n    def writePage(self):\n        if self.__tip == None:\n            print(\"fail: nao existe grafite\")\n            return\n        lead = self.__tip\n        if lead.getSize() <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        cost = lead.usagePerSheet()\n        newSize = lead.getSize() - cost\n        if newSize < 10:\n            self.__tip.setSize(10)\n            print(\"fail: folha incompleta\")\n            return\n        lead.setSize(newSize)\n    def __str__(self) -> str:\n        st = f\"calibre: {self.__thickness}, \"\n        if self.__tip == None:\n            st += f\"grafite: null\"\n        else:\n            st += f\"grafite: {self.__tip}\"\n        return st\ndef main():\n    pencil = Pencil (0, None)\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        if args[0] == \"show\":\n            print(pencil)\n        if args[0] == \"init\":\n            thickness = float(args[1])\n            pencil.init(thickness)\n        if args[0] == \"insert\":\n            thickness = float(args[1])\n            hardness = str(args[2])\n            size = int(args[3])\n            pencil.insert(thickness, hardness, size)\n        if args[0] == \"remove\":\n            pencil.remove()\n        if args[0] == \"write\":\n            pencil.writePage()\nmain()",
+            "content": "@@ -804,35 +804,53 @@\n thickness: float\n+, tip: Lead %7C None\n ):%0A\n-\n         self.__t\n@@ -895,57 +895,59 @@\n p = \n-%5BLead %7C None%5D = %5B%5D%0A        self.__barrel = %5BLead%5D\n+None%0A        self.__bico = %5B%5D%0A        self.__tambor\n  = %5B\n@@ -1155,196 +1155,8 @@\n rue%0A\n-    def insert(self) -%3E bool:%0A        if self.hasGrafite():%0A            print(%22fail: ja existe grafite%22)%0A            return False%0A        self.__tip = self.__barrel%5B0%5D%0A        return True%0A\n     \n@@ -1352,21 +1352,118 @@\n     \n+if \n self.\n-__barrel\n+hasGrafite():%0A            print(%22fail: ja existe grafite%22)%0A            return False%0A        self.__tip\n  = L\n",
             "lines": "97"
+        },
+        {
+            "label": "2025-11-17_22-31-59",
+            "content": "@@ -1143,12 +1143,14 @@\n def \n-pull\n+insert\n (sel\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-17_22-38-18",
+            "content": "@@ -1301,37 +1301,8 @@\n %5B0%5D%0A\n-        del self.__barrel%5B0%5D%0A\n     \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-17_22-40-34",
+            "content": "@@ -2355,45 +2355,127 @@\n s%7D, \n-bico: %7Bself.__tip%7D, tambor\n+%22%0A        if self.__tip == None:%0A            st += f%22grafite: null%22%0A        else:%0A            st += f%22grafite\n : \n-%3C\n %7Bself.__\n barr\n@@ -2474,16 +2474,12 @@\n f.__\n-barrel%7D%3E\n+tip%7D\n %22%0A  \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-11-17_22-45-51",
+            "content": "@@ -873,20 +873,16 @@\n __tip = \n-list\n %5BLead %7C \n@@ -916,20 +916,16 @@\n arrel = \n-list\n %5BLead%5D =\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-46-29",
+            "content": "@@ -2463,14 +2463,8 @@\n  (0,\n- None,\n  Non\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-46-51",
+            "content": "@@ -2459,16 +2459,22 @@\n ncil (0,\n+ None,\n  None)%0A \n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-47-27",
+            "content": "@@ -2458,16 +2458,22 @@\n encil (0\n+, None\n )%0A    wh\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-47-35",
+            "content": "@@ -2457,20 +2457,17 @@\n Pencil (\n-None\n+0\n )%0A    wh\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-47-49",
+            "content": "@@ -2457,16 +2457,20 @@\n Pencil (\n+None\n )%0A    wh\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-48-08",
+            "content": "@@ -2457,17 +2457,16 @@\n Pencil (\n-0\n )%0A    wh\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-48-33",
+            "content": "@@ -870,17 +870,18 @@\n lf.__tip\n-:\n+ =\n  list%5BLe\n@@ -917,17 +917,18 @@\n __barrel\n-:\n+ =\n  list%5BLe\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-50-30",
+            "content": "@@ -705,16 +705,17 @@\n eturn f%22\n+%5B\n %7Bself.__\n@@ -756,16 +756,17 @@\n .__size%7D\n+%5D\n %22%0Aclass \n@@ -2363,17 +2363,16 @@\n , bico: \n-%5D\n %7Bself.__\n@@ -2375,17 +2375,16 @@\n f.__tip%7D\n-%5D\n , tambor\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-52-35",
+            "content": "@@ -2361,17 +2361,17 @@\n , bico: \n-%5B\n+%5D\n %7Bself.__\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-52-49",
+            "content": "@@ -705,17 +705,16 @@\n eturn f%22\n-%5B\n %7Bself.__\n@@ -755,17 +755,16 @@\n .__size%7D\n-%5D\n %22%0Aclass \n@@ -2361,16 +2361,17 @@\n , bico: \n+%5B\n %7Bself.__\n@@ -2374,16 +2374,17 @@\n f.__tip%7D\n+%5D\n , tambor\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-53-16",
+            "content": "@@ -1566,16 +1566,11 @@\n rrel\n-.append(\n+ = \n Lead\n@@ -1596,17 +1596,16 @@\n s, size)\n-)\n %0A       \n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_22-56-10",
+            "content": "@@ -2367,200 +2367,28 @@\n s%7D, \n-%22%0A        if self.__tip is None:%0A            st += %22bico: %5B%5D, %22%0A        else:%0A            st += f%22bico: %7Bself.__tip%7D, %22%0A        tambor = %22%22.join(str(i) for i in self.__barrel)%0A        st += f%22\n+bico: %7Bself.__tip%7D, \n tamb\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-11-17_23-04-06",
+            "content": "@@ -935,10 +935,10 @@\n %5D = \n-%3C%3E\n+%5B%5D\n %0A   \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-17_23-04-54",
+            "content": "@@ -927,26 +927,26 @@\n ist%5BLead%5D = \n-%5B%5D\n+%3C%3E\n %0A    def ini\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-17_23-05-02",
+            "content": "@@ -2565,22 +2565,29 @@\n mbor: %3C%7B\n-tambor\n+self.__barrel\n %7D%3E%22%0A    \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-17_23-06-57",
+            "content": "@@ -1513,9 +1513,9 @@\n mpat\n-%C3%AD\n+i\n vel%22\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-17_23-07-14",
+            "content": "@@ -3144,64 +3144,8 @@\n ze)%0A\n-        if args%5B0%5D == %22pull%22:%0A            pencil.pull()%0A\n     \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-17_23-08-18",
+            "content": "@@ -1172,16 +1172,108 @@\n %0A       \n+ if self.hasGrafite():%0A            print(%22fail: ja existe grafite%22)%0A            return False\n %0A       \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-09-10",
+            "content": "@@ -1176,100 +1176,8 @@\n     \n- if self.hasGrafite():%0A            print(%22fail: ja existe grafite%22)%0A            return False\n %0A   \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-17_23-09-21",
+            "content": "@@ -1089,27 +1089,28 @@\n      return \n-Tru\n+Fals\n e%0A        el\n@@ -1128,28 +1128,27 @@\n      return \n-Fals\n+Tru\n e%0A    def pu\n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-09-55",
+            "content": "@@ -1241,16 +1241,8 @@\n fite\n- no bico\n %22)%0A \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-10-25",
+            "content": "@@ -1197,17 +1197,8 @@\n te()\n- == False\n :%0A  \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-12-03",
+            "content": "@@ -1197,19 +1197,20 @@\n te() == \n-Tru\n+Fals\n e:%0A     \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-12-36",
+            "content": "@@ -1085,36 +1085,35 @@\n          return \n-Fals\n+Tru\n e%0A        else:%0A\n@@ -1123,35 +1123,36 @@\n          return \n-Tru\n+Fals\n e%0A    def pull(s\n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-13-03",
+            "content": "@@ -1197,20 +1197,19 @@\n te() == \n-Fals\n+Tru\n e:%0A     \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-14-19",
+            "content": "@@ -1068,20 +1068,20 @@\n _tip == \n-Lead\n+None\n :%0A      \n@@ -1089,27 +1089,28 @@\n      return \n-Tru\n+Fals\n e%0A        el\n@@ -1128,28 +1128,27 @@\n      return \n-Fals\n+Tru\n e%0A    def pu\n@@ -1197,19 +1197,20 @@\n te() == \n-Tru\n+Fals\n e:%0A     \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-16-04",
+            "content": "@@ -892,20 +892,18 @@\n None%5D = \n-None\n+%5B%5D\n %0A       \n@@ -1060,36 +1060,36 @@\n f self.__tip == \n-None\n+Lead\n :%0A            re\n@@ -1197,20 +1197,19 @@\n te() == \n-Fals\n+Tru\n e:%0A     \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-17_23-19-14",
+            "content": "class Lead:\n    def __init__(self, thickness: float, hardness: str, size: int):\n        self.__thickness = thickness\n        self.__hardness = hardness\n        self.__size = size\n    def getThickness(self):\n        return self.__thickness\n    def getHardness(self):\n        return self.__hardness\n    def getSize(self):\n        return self.__size\n    def setSize(self, size: int):\n        self.__size = size\n    def usagePerSheet(self):\n        if self.__hardness == \"HB\":\n            return 1\n        if self.__hardness == \"2B\":\n            return 2\n        if self.__hardness == \"4B\":\n            return 4\n        if self.__hardness == \"6B\":\n            return 6\n    def __str__(self) -> str:\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\nclass Pencil:\n    def __init__(self, thickness: float):\n        self.__thickness = thickness\n        self.__tip: list[Lead | None] = None\n        self.__barrel: list[Lead] = []\n    def init(self, thickness: float):\n        self.__thickness = thickness\n    def hasGrafite(self) -> bool:\n        if self.__tip == None:\n            return True\n        else:\n            return False\n    def pull(self) -> bool:\n        if self.hasGrafite() == False:\n            print(\"fail: ja existe grafite no bico\")\n            return False\n        self.__tip = self.__barrel[0]\n        del self.__barrel[0]\n        return True\n    def insert(self, thickness: float, hardness: str, size: int) -> bool:\n        if self.__thickness != thickness:\n            print(\"fail: calibre incompat\u00edvel\")\n            return False\n        self.__barrel.append(Lead(thickness, hardness, size))\n        return True\n    def remove(self) -> Lead | None:\n        if self.__tip == None:\n            print(\"fail: nao existe grafite\")\n            return None\n        lead = self.__tip\n        self.__tip = None\n    def writePage(self):\n        if self.__tip == None:\n            print(\"fail: nao existe grafite\")\n            return\n        lead = self.__tip\n        if lead.getSize() <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        cost = lead.usagePerSheet()\n        newSize = lead.getSize() - cost\n        if newSize < 10:\n            self.__tip.setSize(10)\n            print(\"fail: folha incompleta\")\n            return\n        lead.setSize(newSize)\n    def __str__(self) -> str:\n        st = f\"calibre: {self.__thickness}, \"\n        if self.__tip is None:\n            st += \"bico: [], \"\n        else:\n            st += f\"bico: {self.__tip}, \"\n        tambor = \"\".join(str(i) for i in self.__barrel)\n        st += f\"tambor: <{tambor}>\"\n        return st\ndef main():\n    pencil = Pencil (0)\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        if args[0] == \"show\":\n            print(pencil)\n        if args[0] == \"init\":\n            thickness = float(args[1])\n            pencil.init(thickness)\n        if args[0] == \"insert\":\n            thickness = float(args[1])\n            hardness = str(args[2])\n            size = int(args[3])\n            pencil.insert(thickness, hardness, size)\n        if args[0] == \"pull\":\n            pencil.pull()\n        if args[0] == \"remove\":\n            pencil.remove()\n        if args[0] == \"write\":\n            pencil.writePage()\nmain()",
+            "lines": "104"
         }
     ]
 }

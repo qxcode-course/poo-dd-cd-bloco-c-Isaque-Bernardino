@@ -25,29 +25,27 @@ class Lead:
 class Pencil:
     def __init__(self, thickness: float):
         self.__thickness = thickness
-        self.__tip = [ Lead | None] = []
-        self.__barrel = [Lead] = []
+        self.__tip: list[Lead | None] = None
+        self.__barrel: list[Lead] = []
     def init(self, thickness: float):
         self.__thickness = thickness
     def hasGrafite(self) -> bool:
         if self.__tip == None:
-            return False
-        else:
             return True
-    def insert(self, thickness: float, hardness: str, size: int) -> bool:
-        if self.__thickness != thickness:
-            print("fail: calibre incompativel")
+        else:
             return False
-        if self.hasGrafite():
-            print("fail: ja existe grafite")
+    def pull(self) -> bool:
+        if self.hasGrafite() == False:
+            print("fail: ja existe grafite no bico")
             return False
-        self.__tip = Lead(thickness, hardness, size)
+        self.__tip = self.__barrel[0]
+        del self.__barrel[0]
         return True
     def insert(self, thickness: float, hardness: str, size: int) -> bool:
         if self.__thickness != thickness:
-            print("fail: calibre incompativel")
+            print("fail: calibre incompatível")
             return False
-        self.__barrel = Lead(thickness, hardness, size)
+        self.__barrel.append(Lead(thickness, hardness, size))
         return True
     def remove(self) -> Lead | None:
         if self.__tip == None:
@@ -72,13 +70,15 @@ class Pencil:
         lead.setSize(newSize)
     def __str__(self) -> str:
         st = f"calibre: {self.__thickness}, "
-        if self.__tip == None:
-            st += f"grafite: null"
+        if self.__tip is None:
+            st += "bico: [], "
         else:
-            st += f"grafite: {self.__tip}"
+            st += f"bico: {self.__tip}, "
+        tambor = "".join(str(i) for i in self.__barrel)
+        st += f"tambor: <{tambor}>"
         return st
 def main():
-    pencil = Pencil (0, None)
+    pencil = Pencil (0)
     while True:
         line: str = input()
         print("$" + line)
@@ -95,6 +95,8 @@ def main():
             hardness = str(args[2])
             size = int(args[3])
             pencil.insert(thickness, hardness, size)
+        if args[0] == "pull":
+            pencil.pull()
         if args[0] == "remove":
             pencil.remove()
         if args[0] == "write":

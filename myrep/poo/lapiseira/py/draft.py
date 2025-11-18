@@ -55,7 +55,7 @@ class Pencil:
         self.__tip = None
     def writePage(self):
         if self.__tip == None:
-            print("fail: nao existe grafite")
+            print("fail: nao existe grafite no bico")
             return
         lead = self.__tip
         if lead.getSize() <= 10:

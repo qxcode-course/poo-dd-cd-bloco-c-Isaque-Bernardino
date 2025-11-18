@@ -4,3 +4,5 @@
 2025-11-18 19:32:07, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:100
 2025-11-18 19:32:10, MOVE, v:1, k:poo@lapiseira, mode:BACK
 2025-11-18 19:33:10, MOVE, v:1, k:poo@cinema, mode:DOWN
+2025-11-18 19:36:10, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-18 19:36:11, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:0

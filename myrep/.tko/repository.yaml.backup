@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-dd-cd-bloco-c-Isaque-Bernardino/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-18 19:24:52'
+  cache_timestamp: '2025-11-19 02:00:13'
   filters:
   - listas
 expanded:
@@ -20,9 +20,15 @@ expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
 tasks:
-  poo@budega: '{rate:100}'
-  poo@lapiseira: '{rate:100}'
-  poo@pula-pula: '{rate:100}'
+  poo@budega: '{rate:100, guide:vi_a_aula_gravada_na_introducao_do_bloco, alone:8,
+    study:200}'
+  poo@lapiseira: '{rate:100, iagen:utilizei_para_identificar_erros_de_sintaxe_e_explanacao_do_que_teria_que_ser_adicionado_nos_metodos_etc,
+    alone:8, study:150}'
+  poo@pula-pula: '{rate:100, human:tive_ajuda_de_meus_amigos_para_conseguir_entender_e_quais_as_logicas_por_tras_de_cada_metodo,
+    alone:6, study:160}'
+  poo@cinema: '{rate:100, iagen:pedi_para_explicar_qual_seria_a_logica_por_tras_de_cacar_um_id_e_exclui_lo_pois_estava_del,
+    guide:assisti_a_aula_do_link_da_tarefa_para_tentar_entender_melhor_mas_tive_dificuldade_pois_estava_em_outra_linguagem_de_programacao,
+    alone:9, study:260}'
 flags:
   quests: 0
   tracks: 0
@@ -30,4 +36,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@cinema
+selected: poo@campanha-principal

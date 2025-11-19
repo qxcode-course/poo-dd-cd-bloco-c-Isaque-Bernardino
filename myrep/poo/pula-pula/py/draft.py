@@ -31,7 +31,7 @@ class Trampoline:
     def remove(self, name: str):
         for index, kid in enumerate(self.waiting):
             if kid.getName() == name:
-                self.wa.pop(index)
+                self.waiting.pop(index)
                 return
         for index, kid in enumerate(self.playing):
             if kid.getName() == name:

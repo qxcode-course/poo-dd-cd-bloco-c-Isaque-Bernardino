@@ -1,0 +1,92 @@
+2025-11-19 00:03:31, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:56
+2025-11-19 00:05:02, EXEC, v:1, k:poo@cinema, mode:FULL, rate:55, size:56
+2025-11-19 00:05:10, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 00:05:21, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 00:05:22, EXEC, v:1, k:poo@cinema, mode:FULL, rate:55
+2025-11-19 00:07:14, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:59
+2025-11-19 00:15:38, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:60
+2025-11-19 00:16:20, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:60
+2025-11-19 00:18:01, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33
+2025-11-19 00:18:03, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 00:18:07, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 00:18:08, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33
+2025-11-19 00:59:43, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:67
+2025-11-19 00:59:53, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0
+2025-11-19 00:59:58, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:66
+2025-11-19 01:04:35, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:68
+2025-11-19 01:04:52, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:68
+2025-11-19 01:05:15, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:68
+2025-11-19 01:06:37, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:68
+2025-11-19 01:07:45, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44, size:68
+2025-11-19 01:07:51, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 01:08:02, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 01:08:03, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44
+2025-11-19 01:08:38, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44, size:68
+2025-11-19 01:09:17, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44, size:68
+2025-11-19 01:13:34, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44, size:68
+2025-11-19 01:15:15, EXEC, v:1, k:poo@cinema, mode:FULL, rate:33, size:68
+2025-11-19 01:35:04, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44, size:68
+2025-11-19 01:40:20, EXEC, v:1, k:poo@cinema, mode:FULL, rate:44, size:68
+2025-11-19 01:42:00, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:68
+2025-11-19 01:42:40, EXEC, v:1, k:poo@cinema, mode:FULL, rate:66, size:68
+2025-11-19 01:43:03, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:68
+2025-11-19 01:43:12, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 01:43:58, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 01:43:58, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77
+2025-11-19 01:46:06, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:70
+2025-11-19 01:46:53, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:71
+2025-11-19 01:47:09, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:71
+2025-11-19 01:51:52, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 01:51:54, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-19 01:51:55, EXEC, v:1, k:poo@budega, mode:FULL, rate:100
+2025-11-19 01:54:21, EXEC, v:1, k:poo@budega, mode:FULL, rate:100, size:63
+2025-11-19 01:55:36, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-19 01:55:39, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 01:55:39, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:74
+2025-11-19 01:55:55, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:74
+2025-11-19 01:56:06, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:74
+2025-11-19 01:56:53, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:74
+2025-11-19 01:59:26, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:77
+2025-11-19 02:00:03, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:78
+2025-11-19 02:00:14, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 02:00:15, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77
+2025-11-19 02:00:24, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:77
+2025-11-19 02:03:03, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:77
+2025-11-19 02:03:44, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:77
+2025-11-19 02:03:58, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:0
+2025-11-19 02:04:02, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0
+2025-11-19 02:04:07, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:77
+2025-11-19 02:04:10, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 02:04:37, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 02:04:38, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77
+2025-11-19 02:06:43, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 02:06:46, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 02:06:47, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77
+2025-11-19 02:06:48, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 02:06:57, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 02:06:58, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77
+2025-11-19 02:07:44, EXEC, v:1, k:poo@cinema, mode:FULL, rate:77, size:74
+2025-11-19 02:08:44, EXEC, v:1, k:poo@cinema, mode:FULL, rate:88, size:71
+2025-11-19 02:09:22, EXEC, v:1, k:poo@cinema, mode:FULL, rate:100, size:71
+2025-11-19 02:09:25, EXEC, v:1, k:poo@cinema, mode:FULL, rate:100
+2025-11-19 02:09:26, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 02:09:32, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 02:09:32, EXEC, v:1, k:poo@cinema, mode:FULL, rate:100
+2025-11-19 02:09:34, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 02:09:44, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-19 02:09:45, EXEC, v:1, k:poo@cinema, mode:FULL, rate:100
+2025-11-19 02:09:46, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-19 02:11:31, SELF, v:1, k:poo@budega, rate:100, guide:vi_a_aula_gravada_na_introducao_do_bloco, alone:8, study:200
+2025-11-19 02:14:34, SELF, v:1, k:poo@lapiseira, rate:100, iagen:utilizei_para_identificar_erros_de_sintaxe_e_explanacao_do_que_teria_que_ser_adicionado_nos_metodos_etc, alone:8, study:150
+2025-11-19 02:15:51, SELF, v:1, k:poo@pula-pula, rate:100, human:tive_ajuda_de_meus_amigos_para_conseguir_entender_e_quais_as_logicas_por_tras_de_cada_metodo, alone:6, study:160
+2025-11-19 02:15:51, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-19 02:15:53, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:66
+2025-11-19 02:15:54, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-19 02:15:59, SELF, v:1, k:poo@pula-pula, rate:40, human:tive_ajuda_de_meus_amigos_para_conseguir_entender_e_quais_as_logicas_por_tras_de_cada_metodo, alone:6, study:160
+2025-11-19 02:19:07, SELF, v:1, k:poo@cinema, rate:100, iagen:pedi_para_explicar_qual_seria_a_logica_por_tras_de_cacar_um_id_e_exclui_lo_pois_estava_del_ao_inves_de_colocar_NnO, alone:9, study:260
+2025-11-19 02:20:36, SELF, v:1, k:poo@cinema, rate:100, iagen:pedi_para_explicar_qual_seria_a_logica_por_tras_de_cacar_um_id_e_exclui_lo_pois_estava_del, guide:assisti_a_aula_do_link_da_tarefa_para_tentar_entender_melhor_mas_tive_dificuldade_pois_estava_em_outra_linguagem_de_programacao, alone:9, study:260
+2025-11-19 02:20:45, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-19 02:20:46, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40
+2025-11-19 02:21:47, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:66
+2025-11-19 02:21:49, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100
+2025-11-19 02:21:49, MOVE, v:1, k:poo@pula-pula, mode:BACK

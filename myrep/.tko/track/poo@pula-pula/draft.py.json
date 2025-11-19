@@ -157,6 +157,16 @@
         },
         {
             "label": "2025-11-17_19-52-28",
+            "content": "@@ -994,16 +994,21 @@\n  self.wa\n+iting\n .pop(ind\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-19_02-15-53",
+            "content": "@@ -990,29 +990,24 @@\n      self.wa\n-iting\n .pop(index)%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-19_02-21-47",
             "content": "class Kid:\n    def __init__(self, name: str, age: int):\n        self.__name = name\n        self.__age = age\n    def getName(self):\n        return self.__name\n    def getAge(self):\n        return self.__age\n    def setName(self, name: str):\n        self.__name = name\n    def setAge(self, age: int):\n        self.__age = age\n    def __str__(self) -> str:\n        return f\"{self.__name}:{self.__age}\"\nclass Trampoline:\n    def __init__(self):\n        self.playing: list[Kid | None] = []\n        self.waiting: list[Kid] = []\n    def arrive(self, kid: Kid):\n        self.waiting.insert(0, kid)\n    def enter(self):\n        kid = self.waiting.pop()\n        self.playing.insert(0, kid)\n        del kid\n    def leave(self):\n        if len(self.playing) == 0:\n            return\n        kid = self.playing.pop()\n        self.waiting.insert(0, kid)\n        del kid\n    def remove(self, name: str):\n        for index, kid in enumerate(self.waiting):\n            if kid.getName() == name:\n                self.waiting.pop(index)\n                return\n        for index, kid in enumerate(self.playing):\n            if kid.getName() == name:\n                self.playing.pop(index)\n                return\n        print(f\"fail: {name} nao esta no pula-pula\")\n    def __str__(self) -> str:\n        playing = \", \".join([str(x) for x in self.playing])\n        waiting = \", \".join([str(x) for x in (self.waiting)])\n        return f\"[{waiting}] => [{playing}]\"\ndef main():\n    pulapula = Trampoline()\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(pulapula)\n        elif args[0] == \"arrive\":\n            name = (str(args[1]))\n            age = (int(args[2]))\n            pulapula.arrive(Kid(name, age))\n        elif args[0] == \"enter\":\n            pulapula.enter()\n        elif args[0] == \"leave\":\n            pulapula.leave()\n        elif args[0] == \"remove\":\n            remover = args[1]\n            pulapula.remove(remover)\nmain()\n",
             "lines": "66"
         }
